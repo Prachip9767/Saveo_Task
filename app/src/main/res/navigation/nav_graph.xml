@@ -18,5 +18,9 @@
         android:id="@+id/movieDetailsragment"
         android:name="com.app.saveo_task.ui.MovieDetailsragment"
         android:label="fragment_movie_detailsragment"
-        tools:layout="@layout/fragment_movie_detailsragment" />
+        tools:layout="@layout/fragment_movie_detailsragment" >
+        <action
+            android:id="@+id/action_movieDetailsragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

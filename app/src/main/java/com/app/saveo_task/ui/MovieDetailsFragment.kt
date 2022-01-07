@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.app.saveo_task.R
 import com.app.saveo_task.databinding.FragmentMovieDetailsragmentBinding
 import com.bumptech.glide.Glide
 import com.app.saveo_task.remote.response.Result
+import kotlinx.android.synthetic.main.fragment_movie_detailsragment.*
 
 
 class MovieDetailsragment : Fragment(R.layout.fragment_movie_detailsragment) {
@@ -31,7 +33,10 @@ lateinit var movieDetailsragmentBinding: FragmentMovieDetailsragmentBinding
         if (resultx != null) {
             settingDetails(resultx)
         }
+        ivBack.setOnClickListener {
+            Navigation.findNavController(requireView()).navigate(R.id.action_movieDetailsragment_to_homeFragment)    }
     }
+
     private fun settingDetails(result: Result) {
         movieDetailsragmentBinding.movieTitle.text = result.title
         movieDetailsragmentBinding.movieLanguage.text = result.originalLanguage
@@ -43,4 +48,5 @@ lateinit var movieDetailsragmentBinding: FragmentMovieDetailsragmentBinding
             .load(moviePosterURL)
             .into(movieDetailsragmentBinding.ivMoviePoster);
     }
+
 }
