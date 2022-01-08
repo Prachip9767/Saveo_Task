@@ -53,7 +53,7 @@ class MovieAdapter(    private val onItemClicked: OnItemClicked
             itemLayoutBinding.data = resultModel
             itemLayoutBinding.onItemClicked = onItemClicked
 
-            //used for setting up the image prachi
+           
             Glide.with(itemLayoutBinding.moviepost)
                 .load("https://image.tmdb.org/t/p/w500/" + resultModel?.posterPath)
                 .into(itemLayoutBinding.moviepost)
